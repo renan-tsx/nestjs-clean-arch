@@ -3,6 +3,11 @@
 /node_modules
 /build
 
+# Docker
+.docker/*
+!.docker/entrypoint.sh
+!.docker/postgres/Dockerfile
+
 # Logs
 logs
 *.log
@@ -38,9 +43,12 @@ lerna-debug.log*
 # dotenv environment variable files
 .env
 .env.development.local
+.env.development
 .env.test.local
+.env.test
 .env.production.local
 .env.local
+tsconfig.tsbuildinfo
 
 # temp directory
 .temp
