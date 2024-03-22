@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
-import { EnvConfig } from './env-config.interface'
+import { EnvConfig, typeEnv } from './env-config.interface'
 
 @Injectable()
 export class EnvConfigService implements EnvConfig {
@@ -10,7 +10,7 @@ export class EnvConfigService implements EnvConfig {
   getAppPort(): number {
     return Number(this.confiService.get<number>('PORT'))
   }
-  getNodeEnv(): string {
-    return this.confiService.get<string>('NODE_ENV')
+  getNodeEnv(): typeEnv {
+    return this.confiService.get<typeEnv>('NODE_ENV')
   }
 }
