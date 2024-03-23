@@ -1,10 +1,10 @@
-## Comando básico NestJS
+# Comando básico NestJS
 
 - Criar módulo nets g resource users
 
-## Clearn architecture
+# Clearn architecture
 
-### infrastructure
+## infrastructure
 Qualquer serviço externo que não seja parte integrante da solução do cliente, ou seja, que não esteja diretamente relacionado com as regras de negócio da aplicação.
 
 Exemplos:
@@ -15,5 +15,9 @@ Exemplos:
  - Serviço de armazenamento em Nuvem como Amazon S3.
  - Sistema de mensageria como Whatszap.
 
-### domain
+## domain
 Tudo que é essencial, sem influências externas, ou seja, as regras de negócio da aplicação.
+
+### entities
+A camada essencial da aplicação, o núcleo da sua existência, construído com código puro.
+Igualmente as "Use Cases" que normalmente lida com as regras de negócio.
