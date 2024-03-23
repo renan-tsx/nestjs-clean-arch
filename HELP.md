@@ -21,3 +21,13 @@ Tudo que é essencial, sem influências externas, ou seja, as regras de negócio
 ### entities
 A camada essencial da aplicação, o núcleo da sua existência, construído com código puro.
 Igualmente as "Use Cases" que normalmente lida com as regras de negócio.
+
+
+# Clearn architecture - exceções
+Regras que foram quebradas conscientemente.
+
+*1 - Para cada caso, pode ser criado uma camada com contrato e sua implementação,
+permitindo assim a substituição facilmente.
+
+- Utilização do UUID na camada que contêm a regra de negócio
+- Validação das propriedades das entidades utilizando classValidator (*1 Aplicado)
