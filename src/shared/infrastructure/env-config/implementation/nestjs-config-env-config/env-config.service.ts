@@ -3,7 +3,7 @@ import { ConfigService } from '@nestjs/config'
 import { EnvConfig, typeEnv } from '../../env-config.interface'
 
 @Injectable()
-export class EnvConfigService implements EnvConfig {
+export abstract class NestJsConfigEnvConfigService implements EnvConfig {
   // NOTE ConfigService accesses environment variables
   constructor(private confiService: ConfigService) {}
 
