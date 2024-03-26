@@ -1,4 +1,4 @@
-import { UserDataBuilder } from '@/users/domain/testing/helpers/user-data-builder'
+import { UserDataBuilder } from '@/users/domain/testing/helpers'
 import { UserEntity, UserProps } from '../../user.entity'
 
 describe('Testes unitários da UserEntity', () => {

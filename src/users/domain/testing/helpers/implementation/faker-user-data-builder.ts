@@ -1,12 +1,6 @@
+import { UserProps } from '@/users/domain/entities/user.entity'
 import { faker } from '@faker-js/faker'
-import { UserProps } from '../../entities/user.entity'
-
-type Props = {
-  name?: string
-  email?: string
-  password?: string
-  createAt?: Date
-}
+import { Props } from '../user-data-builder-interface'
 
 /**
  * Constrói dados de usuário com valores padrão gerados aleatoriamente,
@@ -15,7 +9,7 @@ type Props = {
  * const userData = UserDataBuilder({})
  * // Saída = Objeto do tipo UserProps
  */
-export function UserDataBuilder(props: Props): UserProps {
+export function FakerUserDataBuilder(props: Props): UserProps {
   return {
     name: props.name ?? faker.person.fullName(),
     email: props.email ?? faker.internet.email(),
