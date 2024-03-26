@@ -1,5 +1,5 @@
-import { validate as uuidValidade } from 'uuid'
 import { Entity } from '../../entity'
+import { generateId } from '../../generate-id'
 
 type StubProps = {
   prop1: string
@@ -9,13 +9,15 @@ type StubProps = {
 class StubEntity extends Entity<StubProps> {}
 
 describe('Testes unitários da classe abstrata Entity', () => {
+  const sut = new generateId()
+
   it('Espero as props e id', () => {
     const props = { prop1: 'value1', prop2: 10 }
     const entity = new StubEntity(props)
 
     expect(entity.props).toStrictEqual(props)
     expect(entity._id).not.toBeNull()
-    expect(uuidValidade(entity._id)).toBeTruthy()
+    expect(sut.ValidadeId(entity._id)).toBeTruthy()
   })
 
   it('Espero que aceite um uuid válido', () => {
@@ -23,7 +25,7 @@ describe('Testes unitários da classe abstrata Entity', () => {
     const props = { prop1: 'value1', prop2: 10 }
     const entity = new StubEntity(props, id)
 
-    expect(uuidValidade(entity._id)).toBeTruthy()
+    expect(sut.ValidadeId(entity._id)).toBeTruthy()
     expect(entity._id).toBe(id)
   })
 
